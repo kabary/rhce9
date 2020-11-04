@@ -1,0 +1,10 @@
+---
+- name: sasa
+  hosts: node1
+  vars:
+
+  tasks:
+    - name: adsasda
+      debug:
+        msg: "Leap Year"
+      when: year == 2020

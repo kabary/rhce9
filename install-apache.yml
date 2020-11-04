@@ -1,0 +1,20 @@
+---
+- name: Install and start Apache Play
+  hosts: webservers
+  tasks:
+    - name: Install and start Apache
+      block:
+         - name: Install httpd
+           yum:
+             name: httpd
+             state: latest
+
+         - name: Start and enable httpd
+           service:
+             name: httpd
+             state: started
+             enabled: yes
+
+    - name: This task is outside the block
+      debug:
+        msg: "I am outside the block now ..."

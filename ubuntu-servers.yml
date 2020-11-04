@@ -1,0 +1,8 @@
+---
+- name: Simple Example for using when
+  hosts: all
+  tasks:
+    - name: Detect Ubuntu Servers
+      debug:
+        msg: "This is an Ubuntu Server."
+      when:  ansible_facts['distribution'] == "Ubuntu"

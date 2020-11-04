@@ -1,0 +1,8 @@
+---
+- name: Range Loop
+  hosts: node1
+  tasks:
+    - name: Range Loop
+      debug:
+        msg: 192.168.1.{{ item }}
+      loop: "{{ range(0,255,2) | list }}"

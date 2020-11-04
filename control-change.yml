@@ -1,0 +1,16 @@
+---
+- name: Control Change
+  hosts: node1
+  tasks:
+    - name: Run the date command
+      command: date
+      notify: handler1
+      changed_when: false
+
+    - name: Run the uptime command
+      command: uptime
+
+  handlers:
+     - name: handler1
+       debug:
+         msg: "I can handle dates"

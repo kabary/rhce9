@@ -1,19 +1,9 @@
-[web_dev]
+[proxy]
 node1
 
-[web_prod]
+[webservers]
 node2
-
-[db_dev]
 node3
 
-[db_prod]
+[dbservers]
 node4
-
-[development:children]
-web_dev
-db_dev
-
-[production:children]
-web_prod
-db_prod

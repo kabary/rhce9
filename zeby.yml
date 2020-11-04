@@ -1,0 +1,9 @@
+---
+- name: create user
+  hosts: node1
+  vars:
+    fav_color: yellow
+  tasks:
+    - name: Fail if you got no keys
+      debug:
+        msg: "{{ fav_color }}" is my favorite color.

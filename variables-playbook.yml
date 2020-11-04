@@ -1,0 +1,10 @@
+---
+- name: Working with variables
+  hosts: node1
+  tasks:
+    - name: Load the variables
+      include_vars: myvars.yml
+
+    - name: Show 2nd item in port_nums
+      debug:
+        msg: SSH port is {{ port_nums[1] }}

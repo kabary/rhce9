@@ -1,0 +1,15 @@
+---
+- name: show some facts
+  hosts: node1
+  tasks:
+    - name: display node1 ipv4 address
+      debug:
+        msg: IPv4 address is {{ ansible_facts['default_ipv4'].address }}
+
+    - name: display node1 fqdn
+      debug:
+        msg: FQDN is {{ ansible_facts['fqdn'] }} 
+
+    - name: display node1 OS distribution
+      debug:
+        msg: OS Distro is {{ ansible_facts.distribution }}

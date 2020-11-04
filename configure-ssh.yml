@@ -1,0 +1,18 @@
+---
+- name: Configure SSH 
+  hosts: all
+  tasks:
+     - name: Edit SSH Configuration
+       blockinfile:
+         path: /etc/ssh/sshd_config
+         block: |
+            MaxAuthTries 4
+            Banner /etc/motd
+            X11Forwarding no
+       notify: restart ssh
+
+  handlers: 
+    - name: restart ssh
+      service:
+        name: sshd
+        state: restarted

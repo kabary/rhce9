@@ -1,0 +1,25 @@
+---
+- name: Handling Errors with Blocks
+  hosts: node1
+  tasks:
+    - name: Handling Errors Example
+      block:
+        - name: run a command
+          command: uptime
+
+        - name: run a bad command
+          command: blabla
+
+        - name: This task will not run
+          debug:
+            msg: "I never run because the task above has failed!"
+
+      rescue:
+        - name: Runs when the block fails
+          debug:
+            msg: "Block failed! let's try to fix it here ..."
+
+      always:
+        - name: This will always run
+          debug:
+            msg: "Whether the block has failed or not ... I will always run!"

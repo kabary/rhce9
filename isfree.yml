@@ -1,0 +1,11 @@
+---
+- name: 
+  hosts: node1
+  vars:
+    weekend: true
+    on_call: "yes"
+  tasks:
+    - name: Run if "weekend" is true and "on_call" is false
+      debug:
+        msg: "You are free!"
+      when: weekend and not on_call | bool

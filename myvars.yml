@@ -1,0 +1,13 @@
+---
+port_nums: [21,22,23,25,80,443]
+
+users { 
+  bob:
+    username: bob
+    uid: 1122
+    shell: /bin/bash
+  lisa:
+    username: lisa
+    uid: 2233
+    shelil: /bin/sh
+}

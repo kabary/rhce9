@@ -1,0 +1,19 @@
+---
+- name: Simple Handler Example
+  hosts: node1
+  tasks:
+    - name: Create engineers group
+      group:
+        name: engineers
+      notify: add elliot
+
+    - name: Another task in the play
+      debug:
+        msg: "I am just another task."
+
+  handlers: 
+    - name: add elliot
+      user:
+        name: elliot
+        groups: engineers
+        append: yes

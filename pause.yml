@@ -1,0 +1,16 @@
+--- 
+- name: pause in loops
+  hosts: node1
+  vars:
+    list1: [2,3,5,7,9,11,13,17,19]
+  tasks:
+    - name: Range of numbers
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ range(1,10,2) | list }}"
+    - name: Print out the list1
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ list1 }}"
+      loop_control:
+        pause: 2

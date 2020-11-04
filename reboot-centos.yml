@@ -1,0 +1,8 @@
+---
+- name: Reboot Servers
+  hosts: all
+  tasks:
+    - name: Reboot CentOS 8 servers
+      reboot: 
+        msg: "Server is rebooting ..."
+      when: ansible_facts['distribution'] == "CentOS" and ansible_facts['distribution_major_version'] == "8"

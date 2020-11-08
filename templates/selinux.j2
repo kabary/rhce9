@@ -1,0 +1,9 @@
+{% set selinux_status = ansible_facts['selinux']['status'] %}
+
+{% if selinux_status == "enabled" %}
+	"SELINUX IS ENABLED"
+{% elif selinux_status == "disabled" %}
+	"SELINUX IS DISABLED"
+{% else %}
+	"SELINUX IS NOT AVAILABLE"
+{% endif %} 

@@ -1,0 +1,8 @@
+---
+- name: range playbook
+  hosts: node1
+  tasks:
+    - name:
+      template: 
+        src: range.j2
+        dest: /tmp/range.out

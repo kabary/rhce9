@@ -1,0 +1,11 @@
+Server Information Summary
+--------------------------
+
+hostname={{ ansible_facts['hostname'] }}
+fqdn={{ ansible_facts['fqdn'] }}
+ipaddr={{ ansible_facts['default_ipv4']['address'] }}
+distro={{ ansible_facts['distribution'] }}
+distro_version={{ ansible_facts['distribution_version'] }}
+nameservers={{ ansible_facts['dns']['nameservers'] }}
+totalmem={{ ansible_facts['memtotal_mb'] }}
+freemem={{ ansible_facts['memfree_mb'] }}

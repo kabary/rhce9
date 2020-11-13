@@ -1,0 +1,20 @@
+---
+- name: Understanding Order of Task Execution
+  hosts: node1
+  tasks:
+    - name: A regular task
+      debug:
+        msg: "I am just a regular task."
+  
+  post_tasks:
+    - name: Runs last
+      debug:
+        msg: "I will run last (post_task)."
+
+  pre_tasks:
+    - name: Runs first
+      debug:
+        msg: "I will run first (pre_task)."
+
+  roles:
+    - role: myrole

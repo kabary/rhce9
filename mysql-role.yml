@@ -1,0 +1,5 @@
+---
+- name: Applying geerlingguy.mysql role
+  hosts: dbservers
+  roles:
+    - geerlingguy.mysql

@@ -1,0 +1,8 @@
+---
+- name: Using an empty role
+  hosts: all
+  tasks:
+    - name: dbserver role
+      include_role:
+        name: myrole
+      when: inventory_hostname in groups['dbservers']

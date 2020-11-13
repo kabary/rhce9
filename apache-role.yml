@@ -1,0 +1,6 @@
+---
+- name: Using httpd-role  
+  hosts: webservers
+  roles:
+    - role: httpd-role
+      sysadmin: angela@linuxhandbook.com

@@ -1,0 +1,8 @@
+---
+- name: Lab 5 Solution
+  hosts: localhost
+  tasks:
+    - name: Display even numbers 20<= num <=40
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ range(20,41,2) | list }}"

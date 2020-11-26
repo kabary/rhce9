@@ -1,0 +1,12 @@
+---
+- name: debug demo
+  hosts: node1
+  tasks:
+    - name: show os distro
+      debug:
+        msg: "{{ ansible_distribution }}"
+
+    - name: show ip address
+      debug:
+        msg: "{{ ansible_facts.default_ipv4.address }}"
+        verbosity: 2

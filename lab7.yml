@@ -1,0 +1,8 @@
+---
+- name: Lab 7 Solution
+  hosts: all
+  tasks: 
+    - name: Edit /etc/motd using Jinja2
+      template:
+        src: motd.j2
+        dest: /etc/motd

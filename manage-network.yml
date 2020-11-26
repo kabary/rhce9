@@ -1,0 +1,33 @@
+---
+- name: Configure a NIC
+  hosts: node1
+  tasks:
+    - name: Configure eth1
+      nmcli:
+        ifname: eth1
+        conn_name: ether-two
+        type: ethernet
+        ip4: 192.168.177.3/16
+        dns4:
+          - 8.8.8.8
+          - 8.8.4.4
+        state: present
+
+    - name: Set hostname
+      hostname:
+        name: node1.linuxhandbook.local
+
+    - name: Enable http and https in firewall public zone
+      firewalld:
+        zone: public
+        service: "{{ item }}"
+        permanent: yes
+        state: enabled
+      loop: [http, https]
+      notify: restart firewalld
+
+  handlers:
+    - name: restart firewalld
+      service:
+        name: firewalld
+        state: restarted

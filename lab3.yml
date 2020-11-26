@@ -1,0 +1,14 @@
+---
+- name: Lab 3 Solution
+  hosts: all
+  tasks:
+    - name: install nmap
+      package:
+        name: nmap
+        state: present
+
+    - name: create an XZ archive
+      archive:
+        path: /home
+        dest: /tmp/home.tar.bz2
+        format: bz2 

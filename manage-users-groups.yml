@@ -1,0 +1,42 @@
+---
+- name: Manage Users & Groups
+  hosts: node4
+  vars:
+    grps:
+      - devops
+      - secops
+    usrs:
+      - username: angela 
+        id: 887
+        pass: 'L!n*X'
+      - username: tyrell 
+        id: 888
+        pass: 'L!n*X'
+      - username: darlene
+        id: 889
+        pass: 'L!n*X'
+  tasks:
+    - name: Create groups
+      group:
+        name: "{{ item }}"
+      loop: "{{ grps }}"
+
+    - name: Create users (and add users to group secops)
+      user:
+        name: "{{ item.username }}"
+        uid: "{{ item.id }}"
+        password: "{{ item.pass | password_hash('sha512') }}"
+        groups: "{{ grps[1] }}"
+      loop: "{{ usrs }}"
+
+    - name: Give secops sudo access
+      copy:
+        content: "%secops  ALL=(ALL)  NOPASSWD: ALL"
+        dest: /etc/sudoers.d/secops
+        mode: 0400
+
+    - name: Copy users SSH public key
+      authorized_key:
+        user: "{{ item.username }}"
+        key: "{{ lookup('file', './keys/' + item.username + '/id_rsa.pub') }}"
+      loop: "{{ usrs }}"

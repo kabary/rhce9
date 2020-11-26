@@ -1,0 +1,20 @@
+---
+- hosts: node1
+  vars:
+    timesync_ntp_servers:
+      - hostname: 0.north-america.pool.ntp.org
+        iburst: yes
+      - hostname: 1.north-america.pool.ntp.org 
+        iburst: yes
+      - hostname: 2.north-america.pool.ntp.org
+        iburst: yes
+      - hostname: 3.north-america.pool.ntp.org
+        iburst: yes
+    tzone: America/Chicago
+  roles:
+    - rhel-system-roles.timesync
+  tasks:
+    - name: Set TimeZone 
+      timezone:
+        name: "{{ tzone }}"
+

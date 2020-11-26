@@ -1,0 +1,62 @@
+---
+- name: Manage Storage
+  hosts: node4
+  vars:
+    partitions:
+      - number: 1
+        start: 0%
+        end: 2GiB
+      - number: 2
+        start: 2GiB
+        end: 4GiB
+    vgs:
+      - name: dbvg
+        devices: ['/dev/sdc1','/dev/sdc2']
+    lvs:
+      - name: dblv
+        size: 3G
+        vgrp: dbvg
+        mnt: /database
+  tasks:
+    # Replace /dev/sdc with your secondary disk name
+    - name: Create two new partitions on /dev/sdc
+      parted:
+        device: /dev/sdc
+        number: "{{ item.number }}"
+        part_start: "{{ item.start }}"
+        part_end: "{{ item.end }}"
+        state: present
+      loop: "{{ partitions }}"
+
+    - name: Create volume group
+      lvg:
+        vg: "{{ item.name }}"
+        pvs: "{{ item.devices }}"
+      loop: "{{ vgs }}"
+      
+    - name: Create logical volume
+      lvol:
+        vg: "{{ item.vgrp }}"
+        lv: "{{ item.name }}"
+        size: "{{ item.size }}"
+      loop: "{{ lvs }}"
+
+    - name: Create filesystem on logical volume
+      filesystem: 
+        dev: "/dev/{{ item.vgrp }}/{{ item.name }}"
+        fstype: ext4
+      loop: "{{ lvs }}"
+
+    - name: Create /database directory
+      file:
+        path: /database
+        mode: 0755
+        state: directory
+
+    - name: Mount logical volume
+      mount:
+        src: "/dev/{{ item.vgrp }}/{{ item.name }}"
+        path: "{{ item.mnt }}"
+        fstype: ext4
+        state: mounted
+      loop: "{{ lvs }}"

@@ -1,0 +1,15 @@
+---
+- name: Lab 4 Solution
+  hosts: all
+  tasks:
+    - name: Run free command and capture output
+      command: free -h 
+      register: freemem
+
+    - name: Display free memory
+      debug:
+        msg: "{{ freemem.stdout }}"
+
+    - name: Display IPv4 address
+      debug:
+        msg: "{{ ansible_facts.default_ipv4.address }}"

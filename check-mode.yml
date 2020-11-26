@@ -1,0 +1,20 @@
+---
+- name: Check mode demo
+  hosts: node1
+  tasks:
+    - name: create a file
+      file: 
+        path: /tmp/file1
+        state: touch
+
+    - name: create a second file
+      file:
+        path: /tmp/file2
+        state: touch
+      check_mode: yes
+
+    - name: create a third file
+      file:
+        path: /tmp/file3
+        state: touch
+      check_mode: no

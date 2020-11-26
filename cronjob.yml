@@ -1,0 +1,20 @@
+---
+- name: Managing cron jobs
+  hosts: node2
+  tasks:
+    - name: Run this cron job every two mins
+      cron:
+        name: "two-mins"
+        user: elliot
+        job: logger 'Two minutes have passed!'
+        minute: '*/2'
+
+    - name: wait for five minutes 
+      pause:
+        minutes: 5
+
+    - name: Remove the two-mins cron job
+      cron:
+        name: "two-mins"
+        user: elliot
+        state: absent 

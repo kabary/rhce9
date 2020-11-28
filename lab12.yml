@@ -1,0 +1,10 @@
+---
+- name: Fix the error
+  hosts: localhost
+  vars:
+    grps: ["devops","secops","netops"]
+  tasks:
+    - name: create groups
+      group:
+        name: "{{ item }}"
+      loop: "{{ grps }}"

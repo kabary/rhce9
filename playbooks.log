@@ -4435,3 +4435,209 @@ I am a Database ServerShared connection to node4 closed.
 2020-11-26 02:00:15,723 p=1555469 u=elliot n=ansible |  [ERROR]: User interrupted execution
 
 2020-11-26 02:01:36,782 p=1555505 u=elliot n=ansible | Encryption successful
+2020-11-26 02:13:06,617 p=1555795 u=elliot n=ansible | ERROR! input is not vault encrypted datashow-secret.txt is not a vault encrypted file for show-secret.txt
+2020-11-26 02:14:57,717 p=1555803 u=elliot n=ansible | ERROR! input is not vault encrypted datashow-secret.txt is not a vault encrypted file for show-secret.txt
+2020-11-26 02:39:31,024 p=1556372 u=elliot n=ansible | ERROR! mysecret.txt exists, please use 'edit' instead
+2020-11-26 03:27:41,538 p=1557226 u=elliot n=ansible | [WARNING]: - geerlingguy.haproxy (1.1.2) is already installed - use --force to change version to
+unspecified
+
+2020-11-26 03:27:57,923 p=1557243 u=elliot n=ansible | - downloading role 'haproxy', owned by geerlingguy
+2020-11-26 03:27:58,815 p=1557243 u=elliot n=ansible | - downloading role from https://github.com/geerlingguy/ansible-role-haproxy/archive/1.1.2.tar.gz
+2020-11-26 03:27:59,242 p=1557243 u=elliot n=ansible | - extracting geerlingguy.haproxy to /home/elliot/plays/roles/geerlingguy.haproxy
+2020-11-26 03:27:59,245 p=1557243 u=elliot n=ansible | - geerlingguy.haproxy (1.1.2) was installed successfully
+2020-11-26 03:51:49,031 p=1557922 u=elliot n=ansible | PLAY [Lab 9 Solution] **************************************************************************************
+2020-11-26 03:51:49,043 p=1557922 u=elliot n=ansible | TASK [Gathering Facts] *************************************************************************************
+2020-11-26 03:51:50,802 p=1557922 u=elliot n=ansible | ok: [node1]
+2020-11-26 03:51:50,817 p=1557922 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is installed.] **************************************************
+2020-11-26 03:51:56,490 p=1557922 u=elliot n=ansible | changed: [node1]
+2020-11-26 03:51:56,506 p=1557922 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is enabled (so init script will start it on Debian).] ***********
+2020-11-26 03:51:56,550 p=1557922 u=elliot n=ansible | skipping: [node1]
+2020-11-26 03:51:56,565 p=1557922 u=elliot n=ansible | TASK [geerlingguy.haproxy : Get HAProxy version.] **********************************************************
+2020-11-26 03:51:57,153 p=1557922 u=elliot n=ansible | ok: [node1]
+2020-11-26 03:51:57,169 p=1557922 u=elliot n=ansible | TASK [geerlingguy.haproxy : Set HAProxy version.] **********************************************************
+2020-11-26 03:51:57,205 p=1557922 u=elliot n=ansible | ok: [node1]
+2020-11-26 03:51:57,221 p=1557922 u=elliot n=ansible | TASK [geerlingguy.haproxy : Copy HAProxy configuration in place.] ******************************************
+2020-11-26 03:51:58,327 p=1557922 u=elliot n=ansible | changed: [node1]
+2020-11-26 03:51:58,342 p=1557922 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is started and enabled on boot.] ********************************
+2020-11-26 03:51:59,480 p=1557922 u=elliot n=ansible | changed: [node1]
+2020-11-26 03:51:59,480 p=1557922 u=elliot n=ansible | RUNNING HANDLER [geerlingguy.haproxy : restart haproxy] ****************************************************
+2020-11-26 03:52:00,076 p=1557922 u=elliot n=ansible | changed: [node1]
+2020-11-26 03:52:00,080 p=1557922 u=elliot n=ansible | PLAY RECAP *************************************************************************************************
+2020-11-26 03:52:00,080 p=1557922 u=elliot n=ansible | node1                      : ok=7    changed=4    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-11-26 04:02:29,091 p=1558569 u=elliot n=ansible | PLAY [Lab 9 Solution] **************************************************************************************
+2020-11-26 04:02:29,103 p=1558569 u=elliot n=ansible | TASK [Gathering Facts] *************************************************************************************
+2020-11-26 04:02:30,873 p=1558569 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:02:30,888 p=1558569 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is installed.] **************************************************
+2020-11-26 04:02:32,757 p=1558569 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:02:32,772 p=1558569 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is enabled (so init script will start it on Debian).] ***********
+2020-11-26 04:02:32,807 p=1558569 u=elliot n=ansible | skipping: [node1]
+2020-11-26 04:02:32,822 p=1558569 u=elliot n=ansible | TASK [geerlingguy.haproxy : Get HAProxy version.] **********************************************************
+2020-11-26 04:02:33,374 p=1558569 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:02:33,390 p=1558569 u=elliot n=ansible | TASK [geerlingguy.haproxy : Set HAProxy version.] **********************************************************
+2020-11-26 04:02:33,427 p=1558569 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:02:33,443 p=1558569 u=elliot n=ansible | TASK [geerlingguy.haproxy : Copy HAProxy configuration in place.] ******************************************
+2020-11-26 04:02:34,559 p=1558569 u=elliot n=ansible | changed: [node1]
+2020-11-26 04:02:34,574 p=1558569 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is started and enabled on boot.] ********************************
+2020-11-26 04:02:35,476 p=1558569 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:02:35,477 p=1558569 u=elliot n=ansible | RUNNING HANDLER [geerlingguy.haproxy : restart haproxy] ****************************************************
+2020-11-26 04:02:36,067 p=1558569 u=elliot n=ansible | changed: [node1]
+2020-11-26 04:02:36,070 p=1558569 u=elliot n=ansible | PLAY RECAP *************************************************************************************************
+2020-11-26 04:02:36,070 p=1558569 u=elliot n=ansible | node1                      : ok=7    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-11-26 04:06:59,627 p=1558755 u=elliot n=ansible | PLAY [Lab 9 Solution] **************************************************************************************
+2020-11-26 04:06:59,639 p=1558755 u=elliot n=ansible | TASK [Gathering Facts] *************************************************************************************
+2020-11-26 04:07:01,417 p=1558755 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:07:01,432 p=1558755 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is installed.] **************************************************
+2020-11-26 04:07:03,208 p=1558755 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:07:03,222 p=1558755 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is enabled (so init script will start it on Debian).] ***********
+2020-11-26 04:07:03,256 p=1558755 u=elliot n=ansible | skipping: [node1]
+2020-11-26 04:07:03,271 p=1558755 u=elliot n=ansible | TASK [geerlingguy.haproxy : Get HAProxy version.] **********************************************************
+2020-11-26 04:07:03,791 p=1558755 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:07:03,807 p=1558755 u=elliot n=ansible | TASK [geerlingguy.haproxy : Set HAProxy version.] **********************************************************
+2020-11-26 04:07:03,844 p=1558755 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:07:03,859 p=1558755 u=elliot n=ansible | TASK [geerlingguy.haproxy : Copy HAProxy configuration in place.] ******************************************
+2020-11-26 04:07:04,956 p=1558755 u=elliot n=ansible | changed: [node1]
+2020-11-26 04:07:04,970 p=1558755 u=elliot n=ansible | TASK [geerlingguy.haproxy : Ensure HAProxy is started and enabled on boot.] ********************************
+2020-11-26 04:07:05,866 p=1558755 u=elliot n=ansible | ok: [node1]
+2020-11-26 04:07:05,867 p=1558755 u=elliot n=ansible | RUNNING HANDLER [geerlingguy.haproxy : restart haproxy] ****************************************************
+2020-11-26 04:07:06,472 p=1558755 u=elliot n=ansible | changed: [node1]
+2020-11-26 04:07:06,474 p=1558755 u=elliot n=ansible | PLAY RECAP *************************************************************************************************
+2020-11-26 04:07:06,475 p=1558755 u=elliot n=ansible | node1                      : ok=7    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+2020-11-26 05:54:19,354 p=1561165 u=elliot n=ansible | PLAY [Lab 10 Solution] *************************************************************************************
+2020-11-26 05:54:19,369 p=1561165 u=elliot n=ansible | TASK [Gathering Facts] *************************************************************************************
+2020-11-26 05:54:21,402 p=1561165 u=elliot n=ansible | ok: [node3]
+2020-11-26 05:54:21,416 p=1561165 u=elliot n=ansible | TASK [Create /web directory] *******************************************************************************
+2020-11-26 05:54:22,040 p=1561165 u=elliot n=ansible | changed: [node3]
+2020-11-26 05:54:22,054 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Install SELinux python2 tools] *******************************************
+2020-11-26 05:54:22,089 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:22,103 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Install SELinux python3 tools] *******************************************
+2020-11-26 05:54:23,899 p=1561165 u=elliot n=ansible | ok: [node3]
+2020-11-26 05:54:23,914 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : refresh facts] ***********************************************************
+2020-11-26 05:54:24,809 p=1561165 u=elliot n=ansible | ok: [node3]
+2020-11-26 05:54:24,824 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Install SELinux tool semanage on Fedora] *********************************
+2020-11-26 05:54:27,393 p=1561165 u=elliot n=ansible | changed: [node3]
+2020-11-26 05:54:27,407 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Set permanent SELinux state if enabled] **********************************
+2020-11-26 05:54:27,442 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,456 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Set permanent SELinux state if disabled] *********************************
+2020-11-26 05:54:27,489 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,503 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Set ansible facts if needed] *********************************************
+2020-11-26 05:54:27,539 p=1561165 u=elliot n=ansible | ok: [node3]
+2020-11-26 05:54:27,553 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Fail if reboot is required] **********************************************
+2020-11-26 05:54:27,563 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,578 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : debug] *******************************************************************
+2020-11-26 05:54:27,612 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,626 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Drop all local modifications] ********************************************
+2020-11-26 05:54:27,661 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,675 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Purge all SELinux boolean local modifications] ***************************
+2020-11-26 05:54:27,711 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,734 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Purge all SELinux file context local modifications] **********************
+2020-11-26 05:54:27,772 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,789 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Purge all SELinux port local modifications] ******************************
+2020-11-26 05:54:27,829 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,843 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Purge all SELinux login local modifications] *****************************
+2020-11-26 05:54:27,879 p=1561165 u=elliot n=ansible | skipping: [node3]
+2020-11-26 05:54:27,893 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Reload SELinux policy] ***************************************************
+2020-11-26 05:54:31,438 p=1561165 u=elliot n=ansible | changed: [node3]
+2020-11-26 05:54:31,452 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Set SELinux booleans] ****************************************************
+2020-11-26 05:54:31,501 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Set SELinux file contexts] ***********************************************
+2020-11-26 05:54:56,267 p=1561165 u=elliot n=ansible | changed: [node3] => (item={'target': '/web(/.*)?', 'setype': 'httpd_sys_content_t', 'ftype': 'd'})
+2020-11-26 05:54:56,284 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Restore SELinux labels on filesystem tree] *******************************
+2020-11-26 05:54:56,736 p=1561165 u=elliot n=ansible | changed: [node3] => (item=/web)
+2020-11-26 05:54:56,753 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Restore SELinux labels on filesystem tree in check mode] *****************
+2020-11-26 05:54:56,790 p=1561165 u=elliot n=ansible | skipping: [node3] => (item=/web) 
+2020-11-26 05:54:56,806 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Set an SELinux label on a port] ******************************************
+2020-11-26 05:54:56,852 p=1561165 u=elliot n=ansible | TASK [rhel-system-roles.selinux : Set linux user to SELinux user mapping] **********************************
+2020-11-26 05:54:56,887 p=1561165 u=elliot n=ansible | PLAY RECAP *************************************************************************************************
+2020-11-26 05:54:56,887 p=1561165 u=elliot n=ansible | node3                      : ok=9    changed=5    unreachable=0    failed=0    skipped=14   rescued=0    ignored=0   
+2020-11-26 05:59:04,200 p=1561414 u=elliot n=ansible | node3 | CHANGED | rc=0 >>
+drwxr-xr-x. 2 root root unconfined_u:object_r:httpd_sys_content_t:s0 6 Nov 26 05:54 /web
+
+2020-11-26 18:10:56,301 p=1574208 u=elliot n=ansible | PLAY [Lab 11 Solution] *********************************************************
+2020-11-26 18:10:56,313 p=1574208 u=elliot n=ansible | TASK [Gathering Facts] *********************************************************
+2020-11-26 18:10:58,174 p=1574208 u=elliot n=ansible | ok: [node4]
+2020-11-26 18:10:58,475 p=1574208 u=elliot n=ansible | ok: [node1]
+2020-11-26 18:10:58,515 p=1574208 u=elliot n=ansible | ok: [node2]
+2020-11-26 18:10:58,621 p=1574208 u=elliot n=ansible | ok: [node3]
+2020-11-26 18:10:58,637 p=1574208 u=elliot n=ansible | TASK [Create clean-tmp cron job] ***********************************************
+2020-11-26 18:10:59,250 p=1574208 u=elliot n=ansible | changed: [node4]
+2020-11-26 18:10:59,384 p=1574208 u=elliot n=ansible | changed: [node2]
+2020-11-26 18:10:59,408 p=1574208 u=elliot n=ansible | changed: [node1]
+2020-11-26 18:10:59,433 p=1574208 u=elliot n=ansible | changed: [node3]
+2020-11-26 18:10:59,435 p=1574208 u=elliot n=ansible | PLAY RECAP *********************************************************************
+2020-11-26 18:10:59,436 p=1574208 u=elliot n=ansible | node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:10:59,436 p=1574208 u=elliot n=ansible | node2                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:10:59,436 p=1574208 u=elliot n=ansible | node3                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:10:59,436 p=1574208 u=elliot n=ansible | node4                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:11:48,944 p=1574345 u=elliot n=ansible | PLAY [Lab 11 Solution] *********************************************************
+2020-11-26 18:11:48,955 p=1574345 u=elliot n=ansible | TASK [Gathering Facts] *********************************************************
+2020-11-26 18:11:50,309 p=1574345 u=elliot n=ansible | ok: [node4]
+2020-11-26 18:11:50,365 p=1574345 u=elliot n=ansible | ok: [node1]
+2020-11-26 18:11:50,412 p=1574345 u=elliot n=ansible | ok: [node2]
+2020-11-26 18:11:50,492 p=1574345 u=elliot n=ansible | ok: [node3]
+2020-11-26 18:11:50,507 p=1574345 u=elliot n=ansible | TASK [Create clean-tmp cron job] ***********************************************
+2020-11-26 18:11:51,076 p=1574345 u=elliot n=ansible | changed: [node4]
+2020-11-26 18:11:51,259 p=1574345 u=elliot n=ansible | changed: [node2]
+2020-11-26 18:11:51,264 p=1574345 u=elliot n=ansible | changed: [node1]
+2020-11-26 18:11:51,311 p=1574345 u=elliot n=ansible | changed: [node3]
+2020-11-26 18:11:51,313 p=1574345 u=elliot n=ansible | PLAY RECAP *********************************************************************
+2020-11-26 18:11:51,313 p=1574345 u=elliot n=ansible | node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:11:51,314 p=1574345 u=elliot n=ansible | node2                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:11:51,314 p=1574345 u=elliot n=ansible | node3                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:11:51,314 p=1574345 u=elliot n=ansible | node4                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:13:55,758 p=1574496 u=elliot n=ansible | PLAY [Lab 11 Solution] *********************************************************
+2020-11-26 18:13:55,769 p=1574496 u=elliot n=ansible | TASK [Gathering Facts] *********************************************************
+2020-11-26 18:13:57,449 p=1574496 u=elliot n=ansible | ok: [node4]
+2020-11-26 18:13:57,652 p=1574496 u=elliot n=ansible | ok: [node1]
+2020-11-26 18:13:57,704 p=1574496 u=elliot n=ansible | ok: [node2]
+2020-11-26 18:13:57,804 p=1574496 u=elliot n=ansible | ok: [node3]
+2020-11-26 18:13:57,819 p=1574496 u=elliot n=ansible | TASK [Create clean-tmp cron job] ***********************************************
+2020-11-26 18:13:58,419 p=1574496 u=elliot n=ansible | changed: [node4]
+2020-11-26 18:13:58,605 p=1574496 u=elliot n=ansible | changed: [node1]
+2020-11-26 18:13:58,608 p=1574496 u=elliot n=ansible | changed: [node2]
+2020-11-26 18:13:58,619 p=1574496 u=elliot n=ansible | changed: [node3]
+2020-11-26 18:13:58,621 p=1574496 u=elliot n=ansible | PLAY RECAP *********************************************************************
+2020-11-26 18:13:58,621 p=1574496 u=elliot n=ansible | node1                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:13:58,621 p=1574496 u=elliot n=ansible | node2                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:13:58,621 p=1574496 u=elliot n=ansible | node3                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:13:58,621 p=1574496 u=elliot n=ansible | node4                      : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-26 18:16:17,374 p=1574639 u=elliot n=ansible | node4 | CHANGED | rc=0 >>
+#Ansible: clean-tmp
+0 0 * * * rm -rf /tmp/*
+
+2020-11-26 18:16:17,616 p=1574639 u=elliot n=ansible | node1 | CHANGED | rc=0 >>
+#Ansible: clean-tmp
+0 0 * * * rm -rf /tmp/*
+
+2020-11-26 18:16:17,639 p=1574639 u=elliot n=ansible | node2 | CHANGED | rc=0 >>
+#Ansible: clean-tmp
+0 0 * * * rm -rf /tmp/*
+
+2020-11-26 18:16:17,709 p=1574639 u=elliot n=ansible | node3 | CHANGED | rc=0 >>
+#Ansible: clean-tmp
+0 0 * * * rm -rf /tmp/*
+
+2020-11-28 22:49:03,700 p=1659981 u=elliot n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/elliot/plays/lab12.yml': line 10, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        name: "{{ item }}"
+      loop: {{ grps }}
+             ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+

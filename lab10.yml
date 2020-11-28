@@ -1,0 +1,15 @@
+---
+- name: Lab 10 Solution
+  hosts: node3
+  vars: 
+    selinux_fcontexts:
+      - { target: '/web(/.*)?', setype: 'httpd_sys_content_t', ftype: 'd' }
+    selinux_restore_dirs:
+      - /web
+  pre_tasks:
+    - name: Create /web directory
+      file:
+        path: /web
+        state: directory
+  roles:
+    - role: rhel-system-roles.selinux

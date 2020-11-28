@@ -1,0 +1,13 @@
+---
+- name: Lab 9 Solution
+  hosts: proxy
+  vars:
+    haproxy_backend_servers:
+     - name: webserver1
+       address: node2
+     - name: webserver2
+       address: node3
+  roles:
+    - role: geerlingguy.haproxy
+    
+    

@@ -1,0 +1,4 @@
+---
+- name: Lab 9 Solution
+  hosts: proxy
+

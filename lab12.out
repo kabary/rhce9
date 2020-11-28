@@ -1,0 +1,75 @@
+2020-11-28 23:06:41,685 p=1660717 u=elliot n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/elliot/plays/lab12.yml': line 10, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        name: "{{ item }}"
+      loop: {{ grps }}
+             ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2020-11-28 23:07:14,701 p=1660744 u=elliot n=ansible | ERROR! We were unable to read either as JSON nor YAML, these are the errors we got from each:
+JSON: Expecting value: line 1 column 1 (char 0)
+
+Syntax Error while loading YAML.
+  found unacceptable key (unhashable type: 'AnsibleMapping')
+
+The error appears to be in '/home/elliot/plays/lab12.yml': line 10, column 14, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        name: "{{ item }}"
+      loop: {{ grps }}
+             ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2020-11-28 23:09:19,664 p=1660867 u=elliot n=ansible | [WARNING]: Could not match supplied host pattern, ignoring: lab12.yml
+
+2020-11-28 23:09:19,664 p=1660867 u=elliot n=ansible | [WARNING]: No hosts matched, nothing to do
+
+2020-11-28 23:09:19,668 p=1660867 u=elliot n=ansible | ERROR! No argument passed to command module (did you mean to run ansible-playbook?)
+2020-11-28 23:09:27,421 p=1660872 u=elliot n=ansible | PLAY [Fix the error] ***********************************************************
+2020-11-28 23:09:27,432 p=1660872 u=elliot n=ansible | TASK [Gathering Facts] *********************************************************
+2020-11-28 23:09:28,545 p=1660872 u=elliot n=ansible | ok: [localhost]
+2020-11-28 23:09:28,562 p=1660872 u=elliot n=ansible | TASK [create groups] ***********************************************************
+2020-11-28 23:09:29,020 p=1660872 u=elliot n=ansible | changed: [localhost] => (item=devops)
+2020-11-28 23:09:29,264 p=1660872 u=elliot n=ansible | changed: [localhost] => (item=secops)
+2020-11-28 23:09:29,506 p=1660872 u=elliot n=ansible | changed: [localhost] => (item=netops)
+2020-11-28 23:09:29,510 p=1660872 u=elliot n=ansible | PLAY RECAP *********************************************************************
+2020-11-28 23:09:29,510 p=1660872 u=elliot n=ansible | localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2020-11-28 23:10:28,904 p=1661067 u=elliot n=ansible | PLAY [Fix the error] ***********************************************************
+2020-11-28 23:10:28,914 p=1661067 u=elliot n=ansible | TASK [Gathering Facts] *********************************************************
+2020-11-28 23:10:30,045 p=1661067 u=elliot n=ansible | ok: [localhost]
+2020-11-28 23:10:30,062 p=1661067 u=elliot n=ansible | TASK [create groups] ***********************************************************
+2020-11-28 23:10:31,001 p=1661067 u=elliot n=ansible | changed: [localhost] => (item=devops)
+2020-11-28 23:10:31,631 p=1661067 u=elliot n=ansible | changed: [localhost] => (item=secops)
+2020-11-28 23:10:32,278 p=1661067 u=elliot n=ansible | changed: [localhost] => (item=netops)
+2020-11-28 23:10:32,282 p=1661067 u=elliot n=ansible | PLAY RECAP *********************************************************************
+2020-11-28 23:10:32,282 p=1661067 u=elliot n=ansible | localhost                  : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
